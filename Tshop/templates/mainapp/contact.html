@@ -1,0 +1,104 @@
+{% extends "base/base.html" %}
+
+{% block title %}Contact Us | T-Shop{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">Contact Us</h1>
+        <p class="lead text-muted">
+            We'd love to hear from you ☕
+        </p>
+    </div>
+
+    <div class="row">
+
+        <!-- Contact Form -->
+        <div class="col-md-7 mb-4">
+            <div class="p-4 border rounded shadow-sm">
+                <h4 class="mb-3 fw-semibold">Send us a message</h4>
+
+                <form method="post" action="">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Your name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-control" placeholder="Your email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Subject</label>
+                        <input type="text" name="subject" class="form-control" placeholder="Subject">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea name="message" rows="5" class="form-control" placeholder="Your message"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark px-4">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-5">
+            <div class="p-4 border rounded shadow-sm h-100">
+                <h4 class="mb-3 fw-semibold">Get in touch</h4>
+
+                <p class="text-muted">
+                    Have questions about our teas, orders, or anything else? Reach out to us anytime.
+                </p>
+
+                <hr>
+
+                <p><strong>📍 Address:</strong><br>
+                    T-Shop Headquarters<br>
+                    Bangalore, India
+                </p>
+
+                <p><strong>📞 Phone:</strong><br>
+                    
+                </p>
+
+                <p><strong>✉️ Email:</strong><br>
+                    
+                </p>
+
+                <p><strong>🕒 Working Hours:</strong><br>
+                    Mon - Sat: 9:00 AM - 7:00 PM<br>
+                    Sunday: Closed
+                </p>
+
+                <hr>
+
+                <!-- Social Links (Empty) -->
+                <div>
+                    <h6 class="fw-semibold">Follow Us</h6>
+                    <a href="" class="me-2 text-dark">Facebook</a>
+                    <a href="" class="me-2 text-dark">Instagram</a>
+                    <a href="" class="me-2 text-dark">Twitter</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Map Placeholder -->
+    <div class="mt-5">
+        <div class="bg-light rounded shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;">
+            <p class="text-muted mb-0">Map will be embedded here</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
