@@ -1,14 +1,22 @@
 from django.shortcuts import render
+from .models import CarouselImage
+
+# Views.py handles request-response
+# It also handles the DML and DQL operations required for the same.
 
 # Create your views here.
 
 def homeView(request):
     template = 'mainapp/home.html'
+    context = {
+        # This will be an array of all active carousel image objects mapped from DB
+        'carousel_images' : CarouselImage.objects.filter(is_active = True),
+    }
 
     return render(
         request = request,
         template_name= template,
-        context={}
+        context= context
     )
 
 def aboutView(request):
