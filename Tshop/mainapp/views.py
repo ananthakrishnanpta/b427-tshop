@@ -36,3 +36,18 @@ def contactView(request):
         template_name= template,
         context={}
     )
+
+
+# Class based generic views
+from django.views.generic import (
+    CreateView,
+    ListView, DetailView,
+    UpdateView, 
+    DeleteView
+)
+
+class CarouselImageList(ListView):
+    template_name = 'mainapp/carousel/carousel_list.html'
+    model = CarouselImage
+    context_object_name = 'carousel_images'    
+

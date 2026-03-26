@@ -4,6 +4,25 @@
     box-sizing: border-box;
 }
 
+/* Prevent navbar overlap (if fixed-top navbar) */
+body {
+    padding-top: 70px; /* adjust to your navbar height */
+}
+
+/* Better image rendering */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* smoother card hover */
+.card {
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
 /* Carousel wrapper */
 #carouselExampleCaptions {
     width: 100%;
