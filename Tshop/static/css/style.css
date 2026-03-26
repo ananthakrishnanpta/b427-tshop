@@ -6,7 +6,7 @@
 
 /* Prevent navbar overlap (if fixed-top navbar) */
 body {
-    padding-top: 70px; /* adjust to your navbar height */
+    padding-top: 60px; /* adjust to your navbar height */
 }
 
 /* Better image rendering */
