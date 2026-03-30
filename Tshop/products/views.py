@@ -16,7 +16,12 @@ from django.urls import reverse_lazy
 class ProductList(ListView):
     template_name = 'products/product_list.html'
     model = Product
-    context_object_name = 'products'    
+    context_object_name = 'products'  
+
+class ProductDetailView(DetailView):
+    template_name = 'products/product_details.html'  
+    model = Product
+    context_object_name = 'product'
 
 class AddProduct(CreateView):
     model = Product
