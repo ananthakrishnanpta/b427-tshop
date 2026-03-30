@@ -21,7 +21,6 @@ def homeView(request):
 
 def aboutView(request):
     template = 'mainapp/about.html'
-
     return render(
         request = request,
         template_name= template,

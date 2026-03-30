@@ -1,0 +1,47 @@
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+    <div class="card h-100 shadow-sm border-0">
+
+        <!-- Fixed aspect ratio wrapper -->
+        <div class="ratio ratio-16x9">
+            <img src="{{ product.thumbnail.url }}"
+                 class="card-img-top object-fit-cover"
+                 alt="{{ product.title }}">
+        </div>
+
+        <div class="card-body d-flex flex-column">
+
+            <h5 class="card-title fw-semibold">
+                {{ product.title|title }}
+            </h5>
+
+            <p class="card-text text-muted small flex-grow-1">
+                {{ product.caption|truncatechars:80 }}
+            </p>
+            <p class="card-text small">
+                Rs. {{product.price}}
+            </p>
+
+            <!-- Buttons -->
+            <!-- User access -->
+             <div class="d-flex gap-2 mt-auto">
+                <a href="" class="btn btn-primary w-100">
+                    Add to Cart
+                </a>
+                
+            </div>
+
+            <!-- Staff access -->
+            <div class="d-flex gap-2 mt-auto">
+                <a href="{% url 'edit_product' product.pk %}" class="btn btn-outline-primary w-100">
+                    Update
+                </a>
+                <a href="{% url 'del_product' product.pk %}" class="btn btn-outline-danger w-100">
+                    Delete
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
