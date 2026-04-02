@@ -5,14 +5,16 @@ from .models import CarouselImage
 # It also handles the DML and DQL operations required for the same.
 
 # Create your views here.
+from products.models import Product
 
 def homeView(request):
     template = 'mainapp/home.html'
     context = {
         # This will be an array of all active carousel image objects mapped from DB
         'carousel_images' : CarouselImage.objects.filter(is_active = True),
-    }
-
+        'products' : Product.objects.all(),
+     
+        }
     return render(
         request = request,
         template_name= template,

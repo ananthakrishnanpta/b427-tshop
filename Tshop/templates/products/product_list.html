@@ -18,15 +18,7 @@ Products
     </div>
 
     <!-- Cards Grid -->
-    <div class="row g-4">
-        {% for product in products %}
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            {% include 'products/includes/productCard.html' %}
-            </div>
-        {% empty %}
-            <p class="text-muted text-center">No products added yet.</p>
-        {% endfor %}
-    </div>
+    {% include 'products/includes/productsSection.html' %}
 
 </div>
 
