@@ -10,7 +10,9 @@ Edit Product
     <div class="card">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{form.as_p}}
+            {% for field in form %}
+                {% include 'base/includes/basicFormField.html' %}
+            {% endfor %}
 
             <button type="submit">Save</button>
         </form>
