@@ -3,7 +3,7 @@ virt/
 
 # Secret environment files
 .env 
-
+secrets.txt
 # Django project folders
 migrations/
 media/
