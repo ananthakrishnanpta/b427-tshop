@@ -134,7 +134,7 @@ MEDIA_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-
+# Run `pip install python-decouple`
 from decouple import config, Csv
 
 # Email Configs
