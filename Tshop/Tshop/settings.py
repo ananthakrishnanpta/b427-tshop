@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'mainapp',
-    'products'
+    'products',
+    'authentication'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,19 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR/'media'
 MEDIA_URL = '/'
+
+# Authentication Routes
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+from decouple import config, Csv
+
+# Email Configs
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

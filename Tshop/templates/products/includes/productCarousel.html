@@ -91,6 +91,8 @@
          data-bs-target="#productCarousel"
          data-bs-slide-to="{{ forloop.counter0 }}"
          class="product-thumb {% if forloop.first %}active-thumb{% endif %}">
+  {% empty %}
+  <p>No images uploaded yet!</p>
   {% endfor %}
 </div>
 
