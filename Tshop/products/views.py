@@ -76,4 +76,7 @@ class DeleteProductImage(DeleteView):
     model = ProductImage
     template_name = 'products/del_product_image.html'
     success_url = reverse_lazy('product_list')
-    context_object_name = 'product_image' 
+    context_object_name = 'product_image'
+    
+
+

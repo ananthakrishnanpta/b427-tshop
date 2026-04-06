@@ -1,6 +1,7 @@
-<div class="product-card card col shadow-sm border-0 position-relative overflow-hidden">
+<div class="product-card card col shadow-sm border-0 position-relative overflow-hidden bg-dark">
 
     <!-- Admin buttons -->
+     {% if user.is_staff %}
     <a href="{% url 'edit_product' product.pk %}" 
        class="product-edit-btn position-absolute top-0 start-0 m-2"
        title="Edit">
@@ -12,7 +13,7 @@
        title="Delete">
         <i class="bi bi-trash"></i>
     </a>
-
+    {% endif %}
     <!-- Image -->
     <div class="product-img ratio ratio-4x3">
         <img src="{{ product.thumbnail.url }}"
@@ -21,7 +22,7 @@
 
     <div class="card-body d-flex flex-column">
         <h5 class="product-title card-title">
-            <a href="{% url 'prod_details' product.pk %}">
+            <a href="{% url 'prod_details' product.pk %}" class="text-decoration-none text-info">
             {{ product.title|title }}
             </a>
         </h5>
@@ -34,7 +35,7 @@
             ₹ {{ product.price }}
         </p>
 
-        <button class="btn btn-primary mt-auto product-cart-btn">
+        <button class="btn  mt-auto product-cart-btn {% if user.is_staff %}disabled btn-secondary{% else %}btn-primary{% endif %}">
             Add to Cart
         </button>
     </div>

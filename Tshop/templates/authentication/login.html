@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+
+{% block content %}
+<section>
+    <div class="card">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {% include 'base/includes/basicFormField.html' %}
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

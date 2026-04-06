@@ -29,6 +29,7 @@
                             <li><a class="dropdown-item" href="{% url 'product_list' %}">Products</a></li>
                         </ul>
                     </li>
+                    {% if user.is_staff %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -43,21 +44,32 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
+                    {% endif %}
+                    
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
+                            {% if user.is_authenticated %}
+                            {{user.username.capitalize}}
+                            {% else %}
                             Accounts
+                            {% endif %}
                         </a>
                         <ul class="dropdown-menu">
+                            {% if user.is_authenticated %}
+                            <li>
+                                <form action="{% url 'logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                            {% else %}
                             <li><a class="dropdown-item" href="{% url 'signin' %}">Login</a></li>
                             <li><a class="dropdown-item" href="{% url 'signup' %}">Register</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="">Logout</a></li>
+                            {% endif %}
                         </ul>
                     </li>
                 </ul>

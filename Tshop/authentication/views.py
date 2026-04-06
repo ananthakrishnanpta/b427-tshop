@@ -13,7 +13,7 @@ class UserRegisterView(CreateView):
     model = User 
     form_class  = UserRegistrationForm
     template_name = 'authentication/register.html'
-    success_url = '/'
+    success_url = reverse_lazy('signin')
 
 class UserLoginView(LoginView):
     template_name = 'authentication/login.html'
