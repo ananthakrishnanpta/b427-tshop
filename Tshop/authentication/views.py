@@ -96,6 +96,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.contrib.auth import update_session_auth_hash
 def set_new_password(request):
+    
     email = request.session.get('verified_email')
     if not email:
         return redirect('send_otp')
