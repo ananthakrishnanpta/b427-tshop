@@ -1,4 +1,4 @@
-<div class="product-card card col shadow-sm border-0 position-relative overflow-hidden bg-dark">
+<div class="product-card card col shadow-sm border-0 position-relative overflow-hidden" data-product-id = '{{product.id}}'>
 
     <!-- Admin buttons -->
      {% if user.is_staff %}
@@ -22,7 +22,7 @@
 
     <div class="card-body d-flex flex-column">
         <h5 class="product-title card-title">
-            <a href="{% url 'prod_details' product.pk %}" class="text-decoration-none text-info">
+            <a href="{% url 'prod_details' product.pk %}" class="text-decoration-none">
             {{ product.title|title }}
             </a>
         </h5>
@@ -35,8 +35,8 @@
             ₹ {{ product.price }}
         </p>
 
-        <a href="" class="btn  mt-auto product-cart-btn {% if user.is_staff %}disabled btn-secondary{% else %}btn-primary{% endif %}">
+        <button class="btn mt-auto add-to-cart product-cart-btn {% if user.is_staff %}disabled btn-secondary{% else %}btn-primary{% endif %}">
             Add to Cart
-        </a>
+        </button>
     </div>
 </div>
