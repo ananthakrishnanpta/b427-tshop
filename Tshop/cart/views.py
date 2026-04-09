@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from .models import CartItem
 
 # Create your views here.
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DeleteView
 from django.views import View
 
 
@@ -50,3 +50,4 @@ class AddToCartView(View):
             'message' : f'{this_product.title} added to Cart',
             'quantity' : item.quantity
         })
+    

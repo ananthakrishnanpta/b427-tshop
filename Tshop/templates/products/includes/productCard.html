@@ -1,4 +1,4 @@
-<div class="product-card card col shadow-sm border-0 position-relative overflow-hidden" data-product-id = '{{product.id}}'>
+<div class="product-card card col shadow-sm border-0 position-relative overflow-hidden" >
 
     <!-- Admin buttons -->
      {% if user.is_staff %}
@@ -35,7 +35,9 @@
             ₹ {{ product.price }}
         </p>
 
-        <button class="btn mt-auto add-to-cart product-cart-btn {% if user.is_staff %}disabled btn-secondary{% else %}btn-primary{% endif %}">
+        <button 
+        class="btn mt-auto add-to-cart product-cart-btn {% if user.is_staff %}disabled btn-secondary{% else %}btn-primary{% endif %}"
+        data-product-id = '{{product.id}}'>
             Add to Cart
         </button>
     </div>
