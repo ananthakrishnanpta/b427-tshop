@@ -13,11 +13,11 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Custom css -->
-     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-     <!-- BS icons -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    
+    <!-- BS icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
 </head>
 
 <body>
@@ -26,6 +26,19 @@
     <main>
         {% block content %}{% endblock %}
     </main>
+
+
+    <!-- Bootstrap toasts for JS alerts -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999">
+        <div id="cartToast" class="toast align-items-center text-bg-success border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body" id="cartToastBody">
+                    Product added to cart!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
 
     {% include 'base/includes/footer.html' %}
 
@@ -36,4 +49,5 @@
 
     {% block extra_js %}{% endblock %}
 </body>
+
 </html>
