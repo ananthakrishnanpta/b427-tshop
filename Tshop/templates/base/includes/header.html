@@ -61,6 +61,7 @@
                         <ul class="dropdown-menu">
                             {% if user.is_authenticated %}
                             <li><a class="dropdown-item" href="{% url 'view_cart' %}">My Cart</a></li>
+                            <li><a class = 'dropdown-item' href="{% url 'order_history_2' %}">Past Orders</a></li>
                             <li>
                                 <form action="{% url 'logout' %}" method="post">
                                     {% csrf_token %}
